@@ -1,0 +1,38 @@
+<mat-sidenav-container class="h-dvh bg-surface-muted" autosize>
+  <!-- Mobile navigation drawer -->
+  <mat-sidenav
+    #menu
+    position="start"
+    mode="over"
+    [opened]="menuOpen()"
+    (openedChange)="onMenuOpenedChange($event)"
+    class="spire-chat-drawer w-72"
+  >
+    <app-side-rail class="block h-full" />
+  </mat-sidenav>
+
+  <!-- AI chat drawer -->
+  <mat-sidenav
+    #chatDrawer
+    position="end"
+    [mode]="chatMode()"
+    [opened]="chat.isOpen()"
+    (openedChange)="onChatOpenedChange($event)"
+    class="spire-chat-drawer w-full sm:w-[420px]"
+  >
+    @if (chat.isOpen()) {
+      <app-chat-panel class="block h-full" />
+    }
+  </mat-sidenav>
+
+  <mat-sidenav-content class="flex h-dvh overflow-hidden bg-surface-muted">
+    <app-side-rail class="hidden h-full lg:block" />
+
+    <div class="flex min-w-0 flex-1 flex-col">
+      <app-top-nav (menuToggle)="menu.toggle()" />
+      <main class="no-scrollbar flex-1 overflow-y-auto">
+        <router-outlet />
+      </main>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,72 @@
+<header class="flex items-center justify-between gap-3 px-4 py-4 lg:px-5">
+  <div class="flex items-center gap-2.5">
+    @if (!breakpoint.isDesktop()) {
+      <button
+        type="button"
+        class="flex h-9 w-9 items-center justify-center rounded-xl bg-surface text-ink-muted shadow-sm ring-1 ring-black/5"
+        (click)="close()"
+        aria-label="Back"
+      >
+        <app-fa-icon [icon]="icons.back" class="text-sm" />
+      </button>
+    }
+    <span
+      class="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-secondary to-primary text-white"
+    >
+      <app-fa-icon [icon]="icons.sparkles" class="text-sm" />
+    </span>
+    <span class="text-base font-semibold text-ink">spire AI</span>
+    <span class="rounded-full bg-secondary/10 px-2 py-0.5 text-[10px] font-semibold text-secondary">
+      Beta
+    </span>
+  </div>
+  <button
+    type="button"
+    class="flex h-9 w-9 items-center justify-center rounded-full bg-surface text-ink-muted shadow-sm ring-1 ring-black/5 transition hover:text-secondary"
+    (click)="close()"
+    [attr.aria-label]="breakpoint.isDesktop() ? 'Collapse chat' : 'Close chat'"
+  >
+    @if (breakpoint.isDesktop()) {
+      <app-fa-icon [icon]="icons.expand" class="text-sm" />
+    } @else {
+      <app-fa-icon [icon]="icons.close" />
+    }
+  </button>
+</header>
+
+<div #scroller class="no-scrollbar flex-1 space-y-4 overflow-y-auto px-4 pb-4 lg:px-5">
+  @for (message of chat.messages(); track message.id) {
+    <app-chat-message [message]="message" />
+  }
+  <app-context-files />
+</div>
+
+<footer class="border-t border-black/5 bg-surface/60 px-4 py-3 lg:px-5">
+  <form
+    class="flex items-center gap-2 rounded-full bg-surface px-2 py-1.5 shadow-sm ring-1 ring-black/5"
+    (ngSubmit)="send()"
+  >
+    <input
+      type="text"
+      name="draft"
+      [(ngModel)]="draft"
+      placeholder="ask spire AI"
+      class="min-w-0 flex-1 bg-transparent px-3 py-2 text-sm text-ink outline-none placeholder:text-ink-muted"
+      aria-label="Ask spire AI"
+    />
+    <button
+      type="button"
+      class="flex h-9 w-9 items-center justify-center rounded-full bg-secondary/10 text-secondary transition hover:bg-secondary/20"
+      aria-label="Voice input"
+    >
+      <app-fa-icon [icon]="icons.microphone" />
+    </button>
+    <button
+      type="submit"
+      class="flex h-9 w-9 items-center justify-center rounded-full bg-secondary text-white transition hover:brightness-110"
+      aria-label="Send message"
+    >
+      <app-fa-icon [icon]="icons.send" />
+    </button>
+  </form>
+</footer>
