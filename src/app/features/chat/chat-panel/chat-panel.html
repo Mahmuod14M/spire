@@ -11,12 +11,12 @@
   </div>
   <button
     type="button"
-    class="flex h-9 w-9 items-center justify-center rounded-full bg-surface text-ink-muted shadow-sm ring-1 ring-black/5 transition hover:text-secondary"
+    class="flex h-9 w-9 items-center justify-center  text-ink-muted  ring-black/5 transition hover:text-secondary"
     (click)="close()"
     [attr.aria-label]="breakpoint.isDesktop() ? 'Collapse chat' : 'Close chat'"
   >
     @if (breakpoint.isDesktop()) {
-      <app-fa-icon [icon]="icons.expand" class="text-sm" />
+      <img src="images/arrow.png" alt="" aria-hidden="true" class="h-4 w-4 object-contain" />
     } @else {
       <app-fa-icon [icon]="icons.close" />
     }
@@ -36,7 +36,7 @@
 </div>
 @if (!chat.started()) {
   <div class="flex flex-1 flex-col px-4 pb-4 lg:px-5">
-    <div class="mt-2 flex items-stretch gap-3">
+    <div class="mt-2 flex items-stretch gap-3 lg:hidden">
       <button
         type="button"
         class="flex-1 rounded-2xl bg-surface p-3 shadow-sm ring-1 ring-black/5"

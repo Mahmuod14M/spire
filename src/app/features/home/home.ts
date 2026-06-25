@@ -10,7 +10,7 @@ import { ServicesSlider } from './components/services-slider/services-slider';
   templateUrl: './home.html',
 })
 export class Home {
-  private readonly chat = inject(ChatService);
+  protected readonly chat = inject(ChatService);
 
   openChat(): void {
     this.chat.open();
