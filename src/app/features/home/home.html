@@ -1,13 +1,13 @@
-<div class="flex gap-5 p-5 lg:gap-6 lg:p-6">
-  <div class="min-w-0 flex-1">
+<div class="flex">
+  <div class="min-w-0 flex-1 bg-white rounded-3xl p-2">
     <app-hero-banner />
     <app-services-slider />
   </div>
 
   <!-- Desktop attendance rail -->
-  <aside class="hidden w-[4.5rem] shrink-0 flex-col items-center gap-3 pt-1 lg:flex">
+  <aside class="hidden w-[7.5rem] bg-white mx-4 rounded-3xl p-2 shrink-0 flex-col items-center gap-3 pt-1 lg:flex">
     <div
-      class="flex w-full flex-col items-center rounded-2xl bg-teal-soft px-2 py-3 text-center text-teal"
+      class="flex w-full flex-col items-center rounded-2xl  px-2 py-3 text-center "
     >
       <img
         src="images/time.png"
@@ -15,12 +15,11 @@
         aria-hidden="true"
         class="mb-1 h-9 w-9 object-contain"
       />
-      <span class="block text-base font-bold leading-none">4H</span>
-      <span class="mt-1 text-[10px] font-medium leading-tight">Attendance</span>
+      <span class="mt-1 text-xs  text-ink-muted">Attendance</span>
     </div>
 
     <div
-      class="flex w-full flex-col items-center rounded-2xl bg-secondary-light px-2 py-3 text-center"
+      class="flex w-full flex-col items-center rounded-2xl  px-2 py-3 text-center"
     >
       <img
         src="images/gate.png"
@@ -28,24 +27,25 @@
         aria-hidden="true"
         class="mb-1 h-9 w-9 object-contain"
       />
-      <span class="text-[10px] font-medium leading-tight text-secondary">Out of gate</span>
+      <span class="text-xs font-medium leading-tight text-gate">Out of gate</span>
     </div>
-
+    <hr class="w-full border-t border-gray-200 my-8">
     <button
       type="button"
-      class="flex h-11 w-11 items-center justify-center rounded-full bg-secondary-light text-secondary transition hover:bg-secondary/15"
-      aria-label="Add"
+      class="flex items-center justify-center rounded-full transition hover:scale-[1.03]"
+      aria-label="Open spire AI"
+      (click)="openChat()"
     >
-      <app-fa-icon [icon]="icons.plus" />
+      <img src="images/add-btn.png" alt="" aria-hidden="true" class=" object-contain" />
     </button>
-
+    <hr class="w-full border-t border-gray-200 my-8">
     <button
       type="button"
-      class="mt-auto flex h-12 w-12 items-center justify-center text-primary/40 transition hover:text-primary/70"
+      class="mt-auto flex  items-center justify-center transition hover:scale-[1.03]"
       (click)="openChat()"
       aria-label="Open spire AI"
     >
-      <app-fa-icon [icon]="icons.sparkles" class="text-2xl" />
+      <img src="images/stars.png" alt="" aria-hidden="true" class=" object-contain" />
     </button>
   </aside>
 </div>
