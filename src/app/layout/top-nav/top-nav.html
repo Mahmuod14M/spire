@@ -60,7 +60,7 @@
 </div>
 
 <!-- Desktop top bar -->
-<div class="hidden items-center gap-6 px-6 py-4 lg:flex">
+<div class="hidden items-center gap-6 px-6 py-4 justify-between lg:flex">
   <div class="flex items-center gap-2.5">
     <img
       src="images/app-icon.png"
@@ -70,11 +70,11 @@
     />
     <span class="text-xl font-bold tracking-tight text-primary">Spire</span>
   </div>
-
+<div class="flex items-center gap-2">
   <div
-    class="mx-auto flex w-full max-w-md items-center gap-2 rounded-full bg-surface px-4 py-2 text-ink-muted ring-1 ring-black/5"
+    class="flex w-[270px] h-[50px] items-center gap-2 rounded-[12px] bg-surface px-4 py-2 text-ink-muted ring-1 ring-black/5 transition-[width] duration-200 hover:w-[310px]"
   >
-    <app-fa-icon [icon]="icons.search" class="text-sm" />
+    <img src="images/search-icon.png" alt="" aria-hidden="true" class="h-4 w-4 object-contain" />
     <input
       type="search"
       placeholder="Search..."
@@ -86,24 +86,30 @@
   <div class="flex items-center gap-2">
     <button
       type="button"
-      class="flex h-10 w-10 items-center justify-center rounded-full bg-surface text-ink ring-1 ring-black/5 transition hover:text-secondary"
+      class="flex w-[50px] h-[50px] items-center justify-center rounded-lg bg-surface text-ink ring-1 ring-black/5 transition hover:text-secondary"
       aria-label="Notifications"
     >
-      <app-fa-icon [icon]="icons.bell" class="text-base" />
+        <img
+        src="images/notifi.png"
+        alt=""
+        aria-hidden="true"
+        class="h-4 w-4 object-contain"
+      />
     </button>
     <button
       type="button"
-      class="flex h-10 w-10 items-center justify-center rounded-full bg-surface text-ink ring-1 ring-black/5 transition hover:text-secondary"
+      class="flex w-[50px] h-[50px] items-center justify-center rounded-lg bg-surface text-ink ring-1 ring-black/5 transition hover:text-secondary"
       aria-label="Apps"
     >
-      <app-fa-icon [icon]="icons.apps" />
+      <img src="images/apps.png" alt="" aria-hidden="true" class="h-4 w-4 object-contain" />
     </button>
     <button
       type="button"
-      class="flex h-10 w-10 items-center justify-center rounded-full bg-surface text-ink ring-1 ring-black/5 transition hover:text-secondary"
+      class="flex w-[50px] h-[50px] items-center justify-center rounded-lg bg-surface text-ink ring-1 ring-black/5 transition hover:text-secondary"
       aria-label="Support"
     >
-      <app-fa-icon [icon]="icons.headset" />
+      <img src="images/headset.png" alt="" aria-hidden="true" class="h-4 w-4 object-contain" />
     </button>
   </div>
+</div>
 </div>
