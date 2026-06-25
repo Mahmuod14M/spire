@@ -1,5 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { ChatService } from '../../core/services/chat.service';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { HeroBanner } from './components/hero-banner/hero-banner';
 import { ServicesSlider } from './components/services-slider/services-slider';
 
@@ -9,10 +8,4 @@ import { ServicesSlider } from './components/services-slider/services-slider';
   imports: [HeroBanner, ServicesSlider],
   templateUrl: './home.html',
 })
-export class Home {
-  protected readonly chat = inject(ChatService);
-
-  openChat(): void {
-    this.chat.open();
-  }
-}
+export class Home {}

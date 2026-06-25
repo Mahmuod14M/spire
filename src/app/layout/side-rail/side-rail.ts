@@ -17,7 +17,7 @@ interface RailItem {
   },
   template: `
     <nav
-      class="flex h-full w-full max-w-[70px] flex-col items-center gap-1.5 border-r border-black/5 bg-surface-muted/60 py-5"
+      class="flex h-dvh w-full max-w-[70px] flex-col items-center gap-1.5 border-r border-black/5 bg-surface-muted/60 py-5"
       aria-label="Primary"
     >
       @for (item of items; track item.id) {
