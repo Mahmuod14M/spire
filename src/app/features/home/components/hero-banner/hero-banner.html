@@ -1,5 +1,5 @@
 <section
-  class="relative overflow-hidden rounded-3xl bg-primary text-white shadow-xl h-[62dvh] min-h-[26rem] max-h-[34rem] lg:h-auto lg:min-h-0 lg:max-h-none"
+  class="relative min-h-[26rem] flex items-center justify-evenly  overflow-hidden rounded-3xl bg-primary text-white shadow-xl lg:min-h-[30rem] xl:min-h-[32rem]"
   style="background-image: var(--gradient-banner)"
 >
   <!-- Background imagery -->
@@ -9,28 +9,23 @@
     aria-hidden="true"
     class="pointer-events-none absolute inset-x-0 bottom-0 mx-auto h-full w-full object-cover object-bottom opacity-95 lg:hidden"
   />
-  <img
-    src="images/hero-desktop.png"
-    alt=""
-    aria-hidden="true"
-    class="pointer-events-none absolute inset-0 hidden h-full w-full object-cover object-right lg:block"
-  />
+
 
   <!-- Mobile / base content (centered) -->
-  <div class="relative flex h-full flex-col items-center px-5 pb-5 pt-7 text-center lg:hidden">
+  <div class="relative flex h-full min-h-[26rem] flex-col items-center px-5 pb-5 pt-7 text-center lg:hidden">
     <img
       src="images/pink-stare.png"
       alt=""
       aria-hidden="true"
       class="m-8 object-contain"
     />
-    <h1 class="text-3xl font-medium leading-snug mb-7">
+    <h1 class="mb-7 text-3xl font-medium leading-snug">
       Built to power a nation.<br />
       Ready to power you.
     </h1>
-    <p class="mt-4  text-2xl leading-relaxed text-white/85">
-      Specialized <br> excellence brings mission-critical
-      intelligence to your workday.
+    <p class="mt-4 text-2xl leading-relaxed text-white/85">
+      Specialized <br />
+      excellence brings mission-critical intelligence to your workday.
     </p>
 
     <div class="flex-1" aria-hidden="true"></div>
@@ -41,8 +36,14 @@
       (click)="openChat()"
     >
       <span
-        class="rounded-full bg-secondary px-5 py-2.5 text-sm font-semibold text-white"
+        class="flex items-center gap-2 rounded-full bg-secondary px-5 py-2.5 text-sm font-semibold text-white"
       >
+        <img
+          src="images/ai-icon.png"
+          alt=""
+          aria-hidden="true"
+          class="h-5 w-5 rounded-full object-cover"
+        />
         ask spire ai
       </span>
       <span class="flex-1"></span>
@@ -55,11 +56,11 @@
   </div>
 
   <!-- Desktop content (left aligned) -->
-  <div class="relative hidden max-w-xl flex-col px-12 py-14 lg:flex">
-    <h1 class="text-4xl font-bold leading-tight xl:text-5xl">
+  <div class="relative z-10 hidden  flex-col px-10 py-12 lg:flex xl:px-12 xl:py-14">
+    <h1 class="text-4xl font-bold leading-tight xl:text-[2.75rem] xl:leading-[1.15]">
       Built to power a nation.<br />Ready to power you.
     </h1>
-    <p class="mt-5 max-w-sm text-sm leading-relaxed text-white/80">
+    <p class="mt-5 max-w-md text-base leading-relaxed text-white/80">
       Specialized excellence brings mission-critical intelligence to your workday.
     </p>
 
@@ -71,24 +72,28 @@
       <span
         class="flex items-center gap-2 rounded-full bg-secondary px-5 py-2.5 text-sm font-semibold text-white"
       >
-        <app-fa-icon [icon]="icons.sparkles" class="text-xs" />
+        <img
+          src="images/ai-icon.png"
+          alt=""
+          aria-hidden="true"
+          class="h-5 w-5 rounded-full object-cover"
+        />
         ask spire ai
       </span>
       <span class="flex-1"></span>
       <span
-        class="flex h-9 w-9 items-center justify-center rounded-full bg-secondary/10 text-secondary"
+        class="flex h-9 w-9 items-center justify-center rounded-full bg-secondary-light text-secondary"
       >
         <img src="images/mic.png" alt="" aria-hidden="true" class="h-4 w-4 object-contain" />
       </span>
     </button>
   </div>
-
-  <!-- Desktop accents -->
- 
   <img
-    src="images/badge.png"
+    src="images/hero-desktop.png"
     alt=""
     aria-hidden="true"
-    class="absolute bottom-8 right-10 hidden h-28 w-28 animate-[spin_18s_linear_infinite] lg:block"
+    class="pointer-events-none  inset-0 hidden h-full w-auto object-cover object-[right_center] lg:block"
   />
+  <!-- Desktop accents -->
+
 </section>

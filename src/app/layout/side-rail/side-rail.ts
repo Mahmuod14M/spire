@@ -17,7 +17,7 @@ interface RailItem {
   },
   template: `
     <nav
-      class="flex h-full w-full max-w-[70px] flex-col items-center gap-2 bg-surface py-4 ring-1 ring-black/5"
+      class="flex h-full w-full max-w-[70px] flex-col items-center gap-1.5 border-r border-black/5 bg-surface-muted/60 py-5"
       aria-label="Primary"
     >
       @for (item of items; track item.id) {
@@ -26,8 +26,8 @@ interface RailItem {
           class="flex h-11 w-11 items-center justify-center rounded-xl text-lg transition"
           [class]="
             active() === item.id
-              ? 'bg-secondary/10 text-secondary'
-              : 'text-ink-muted hover:bg-surface-muted hover:text-ink'
+              ? 'bg-primary/10 text-primary'
+              : 'text-ink-muted hover:bg-white/80 hover:text-ink'
           "
           (click)="active.set(item.id)"
           [attr.aria-label]="item.label"
@@ -39,10 +39,10 @@ interface RailItem {
 
       <button
         type="button"
-        class="mt-auto flex h-10 w-10 items-center justify-center rounded-full bg-surface-muted text-ink-muted ring-1 ring-black/5 transition hover:text-ink"
+        class="mt-auto flex h-10 w-10 items-center justify-center overflow-hidden rounded-full bg-primary/10 ring-2 ring-white shadow-sm transition hover:bg-primary/15"
         aria-label="Account"
       >
-        <app-fa-icon [icon]="icons.user" />
+        <app-fa-icon [icon]="icons.user" class="text-lg text-primary" />
       </button>
     </nav>
   `,
@@ -53,12 +53,12 @@ export class SideRail {
 
   protected readonly items: RailItem[] = [
     { id: 'home', icon: ICONS.home, label: 'Home' },
-    { id: 'apps', icon: ICONS.apps, label: 'Apps' },
+    { id: 'grid', icon: ICONS.grid, label: 'Dashboard' },
     { id: 'briefcase', icon: ICONS.briefcase, label: 'Workspace' },
     { id: 'folder', icon: ICONS.folder, label: 'Files' },
-    { id: 'tasks', icon: ICONS.tasks, label: 'Tasks' },
+    { id: 'calendar', icon: ICONS.calendar, label: 'Calendar' },
     { id: 'docs', icon: ICONS.documents, label: 'Documents' },
-    { id: 'star', icon: ICONS.star, label: 'Favorites' },
-    { id: 'shop', icon: ICONS.shop, label: 'Shop' },
+    { id: 'tasks', icon: ICONS.tasks, label: 'Tasks' },
+    { id: 'table', icon: ICONS.table, label: 'Reports' },
   ];
 }

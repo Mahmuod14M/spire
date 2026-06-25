@@ -41,6 +41,7 @@ export const ICONS = {
   star: { name: 'star', variant: 'regular' },
   calendar: { name: 'calendar', variant: 'regular' },
   shop: { name: 'store' },
+  table: { name: 'table' },
   battery: { name: 'battery-three-quarters' },
   chart: { name: 'chart-line' },
   toggleOn: { name: 'toggle-on' },
