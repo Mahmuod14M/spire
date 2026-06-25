@@ -29,10 +29,13 @@
     </button>
     <button
       type="button"
-      class="flex h-11 w-11 items-center justify-center rounded-xl bg-surface text-ink-muted shadow-sm ring-1 ring-black/5"
+      class="h-11 w-11 overflow-hidden rounded-full shadow-sm ring-1 ring-black/5"
       aria-label="Account"
     >
-      <app-fa-icon [icon]="icons.user" class="text-lg" />
+      <span
+        class="block h-full w-full bg-linear-to-br from-pink-400 via-purple-500 to-blue-400"
+        aria-hidden="true"
+      ></span>
     </button>
   </div>
 </div>

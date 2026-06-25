@@ -1,5 +1,5 @@
 <section
-  class="relative overflow-hidden rounded-3xl bg-primary text-white shadow-xl"
+  class="relative overflow-hidden rounded-3xl bg-primary text-white shadow-xl h-[62dvh] min-h-[26rem] max-h-[34rem] lg:h-auto lg:min-h-0 lg:max-h-none"
   style="background-image: var(--gradient-banner)"
 >
   <!-- Background imagery -->
@@ -7,7 +7,7 @@
     src="images/hero-mobile.png"
     alt=""
     aria-hidden="true"
-    class="pointer-events-none absolute inset-x-0 bottom-0 mx-auto h-full w-full object-cover object-bottom opacity-90 lg:hidden"
+    class="pointer-events-none absolute inset-x-0 bottom-0 mx-auto h-full w-full object-cover object-bottom opacity-95 lg:hidden"
   />
   <img
     src="images/hero-desktop.png"
@@ -17,30 +17,32 @@
   />
 
   <!-- Mobile / base content (centered) -->
-  <div class="relative flex flex-col items-center px-6 py-8 text-center lg:hidden">
-    <app-fa-icon [icon]="icons.asterisk" class="mb-6 text-5xl text-secondary" />
-    <h1 class="text-2xl font-semibold leading-snug">
-      Built to power a nation.<br />Ready to power you.
+  <div class="relative flex h-full flex-col items-center px-5 pb-5 pt-7 text-center lg:hidden">
+    <app-fa-icon [icon]="icons.asterisk" class="mb-4 text-[2.75rem] text-secondary" />
+    <h1 class="text-xl font-medium leading-snug">
+      Built to power a nation.<br />
+      <span class="text-2xl font-bold">Ready to power you.</span>
     </h1>
-    <p class="mt-5 max-w-xs text-sm leading-relaxed text-white/80">
+    <p class="mt-4 max-w-[17rem] text-xs leading-relaxed text-white/85">
       <span class="font-semibold text-white">Specialized</span> excellence brings mission-critical
       intelligence to your workday.
     </p>
 
+    <div class="flex-1" aria-hidden="true"></div>
+
     <button
       type="button"
-      class="mt-7 flex w-full max-w-sm items-center gap-2 rounded-full bg-white p-1.5 shadow-lg"
+      class="mt-auto flex w-full max-w-[20rem] items-center gap-2 rounded-full bg-white p-1.5 shadow-lg"
       (click)="openChat()"
     >
       <span
-        class="flex items-center gap-2 rounded-full bg-secondary px-5 py-2.5 text-sm font-semibold text-white"
+        class="rounded-full bg-secondary px-5 py-2.5 text-sm font-semibold text-white"
       >
-        <app-fa-icon [icon]="icons.sparkles" class="text-xs" />
         ask spire ai
       </span>
       <span class="flex-1"></span>
       <span
-        class="flex h-9 w-9 items-center justify-center rounded-full bg-secondary/10 text-secondary"
+        class="flex h-10 w-10 items-center justify-center rounded-full bg-secondary-light text-secondary"
       >
         <app-fa-icon [icon]="icons.microphone" />
       </span>
@@ -77,11 +79,7 @@
   </div>
 
   <!-- Desktop accents -->
-  <app-fa-icon
-    [icon]="icons.asterisk"
-    class="absolute right-[34%] top-10 hidden text-4xl text-secondary lg:inline-flex"
-    aria-hidden="true"
-  />
+ 
   <img
     src="images/badge.png"
     alt=""
