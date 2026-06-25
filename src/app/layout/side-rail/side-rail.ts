@@ -1,10 +1,10 @@
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { FaIconComponent } from '../../shared/fa-icon.component';
-import { ICONS, IconDef } from '../../shared/icons';
+import { ICONS } from '../../shared/icons';
 
 interface RailItem {
   id: string;
-  icon: IconDef;
+  image: string;
   label: string;
 }
 
@@ -17,29 +17,29 @@ interface RailItem {
   },
   template: `
     <nav
-      class="flex h-full w-full max-w-[70px] bg-white rounded-3xl p-2 mx-2 flex-col items-center gap-1.5 border-r border-black/5 bg-surface-muted/60 py-5"
+      class="mx-2 flex h-full w-full max-w-[70px] flex-col items-center gap-1.5 rounded-3xl border-r border-black/5 bg-surface-muted/60 bg-white p-2 py-5"
       aria-label="Primary"
     >
       @for (item of items; track item.id) {
         <button
           type="button"
-          class="flex h-11 w-11 items-center justify-center rounded-xl text-lg transition"
+          class="flex h-11 w-11 items-center justify-center rounded-xl transition"
           [class]="
             active() === item.id
-              ? 'bg-primary/10 text-[#F6EDFC]/10'
-              : 'text-ink-muted hover:bg-white/80 hover:text-ink'
+              ? 'bg-primary/10'
+              : 'hover:bg-white/80'
           "
           (click)="active.set(item.id)"
           [attr.aria-label]="item.label"
           [attr.aria-current]="active() === item.id ? 'page' : null"
         >
-          <app-fa-icon [icon]="item.icon" />
+          <img [src]="item.image" alt="" aria-hidden="true" class="h-5 w-5 object-contain" />
         </button>
       }
 
       <button
         type="button"
-        class="mt-auto flex h-10 w-10 items-center justify-center overflow-hidden rounded-full bg-primary/10 ring-2 ring-white shadow-sm transition hover:bg-primary/15"
+        class="mt-auto flex h-10 w-10 items-center justify-center overflow-hidden rounded-lg bg-white  ring-1 ring-black/5   shadow-sm transition "
         aria-label="Account"
       >
         <app-fa-icon [icon]="icons.user" class="text-lg text-primary" />
@@ -52,13 +52,11 @@ export class SideRail {
   protected readonly active = signal('home');
 
   protected readonly items: RailItem[] = [
-    { id: 'home', icon: ICONS.home, label: 'Home' },
-    { id: 'grid', icon: ICONS.grid, label: 'Dashboard' },
-    { id: 'briefcase', icon: ICONS.briefcase, label: 'Workspace' },
-    { id: 'folder', icon: ICONS.folder, label: 'Files' },
-    { id: 'calendar', icon: ICONS.calendar, label: 'Calendar' },
-    { id: 'docs', icon: ICONS.documents, label: 'Documents' },
-    { id: 'tasks', icon: ICONS.tasks, label: 'Tasks' },
-    { id: 'table', icon: ICONS.table, label: 'Reports' },
+    { id: 'home', image: 'images/home.png', label: 'Home' },
+    { id: 'apps', image: 'images/grid-layout.png', label: 'Apps' },
+    { id: 'bag', image: 'images/bag.png', label: 'Workspace' },
+    { id: 'file', image: 'images/file.png', label: 'Files' },
+    { id: 'calendar', image: 'images/calendar.png', label: 'Calendar' },
+    { id: 'docs', image: 'images/docs.png', label: 'Documents' },
   ];
 }
