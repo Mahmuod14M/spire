@@ -33,6 +33,16 @@ export class ChatPanel {
     });
   }
 
+  startChat(): void {
+    this.chat.start();
+    queueMicrotask(() => {
+      const el = this.scroller()?.nativeElement;
+      if (el) {
+        el.scrollTop = el.scrollHeight;
+      }
+    });
+  }
+
   close(): void {
     this.chat.close();
   }

@@ -7,10 +7,12 @@ import { CONTEXT_FILES } from '../data/context-files';
 @Injectable({ providedIn: 'root' })
 export class ChatService {
   private readonly _isOpen = signal(false);
+  private readonly _started = signal(false);
   private readonly _messages = signal<ChatMessage[]>(CHAT_MESSAGES);
   private readonly _contextFiles = signal<ContextFile[]>(CONTEXT_FILES);
 
   readonly isOpen = this._isOpen.asReadonly();
+  readonly started = this._started.asReadonly();
   readonly messages = this._messages.asReadonly();
   readonly contextFiles = this._contextFiles.asReadonly();
 
@@ -20,10 +22,15 @@ export class ChatService {
 
   open(): void {
     this._isOpen.set(true);
+    this._started.set(false);
   }
 
   close(): void {
     this._isOpen.set(false);
+  }
+
+  start(): void {
+    this._started.set(true);
   }
 
   toggle(): void {
@@ -40,6 +47,9 @@ export class ChatService {
     const value = text.trim();
     if (!value) {
       return;
+    }
+    if (!this._started()) {
+      this._started.set(true);
     }
     this._messages.update((messages) => [
       ...messages,

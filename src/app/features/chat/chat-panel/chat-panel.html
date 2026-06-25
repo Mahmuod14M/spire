@@ -2,9 +2,9 @@
   <div class="flex items-center gap-2.5">
  
     <span
-      class="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-secondary to-primary text-white"
+      class="flex h-9 w-9 items-center justify-center overflow-hidden rounded-full"
     >
-      <app-fa-icon [icon]="icons.sparkles" class="text-sm" />
+      <img src="images/ai-icon.png" alt="" aria-hidden="true" class="h-full w-full object-contain" />
     </span>
     <span class="text-base font-semibold text-ink">spire AI</span>
 
@@ -34,15 +34,66 @@
   </button>
 }
 </div>
-<div #scroller class="no-scrollbar flex-1 space-y-4 overflow-y-auto px-4 pb-4 lg:px-5">
-  @for (message of chat.messages(); track message.id) {
-    <app-chat-message [message]="message" />
-  }
-</div>
+@if (!chat.started()) {
+  <div class="flex flex-1 flex-col px-4 pb-4 lg:px-5">
+    <div class="mt-2 flex items-stretch gap-3">
+      <button
+        type="button"
+        class="flex-1 rounded-2xl bg-surface p-3 shadow-sm ring-1 ring-black/5"
+        (click)="startChat()"
+      >
+        <div class="flex items-center flex-col gap-2">
+          <span class="flex h-9 w-9 items-center justify-center rounded-xl  ring-1 ring-black/5">
+            <img src="images/time.png" alt="" aria-hidden="true" class=" object-contain" />
+          </span>
+          <div class="text-center">
+            <div class="text-xs text-ink-muted">Attendance</div>
+          </div>
+        </div>
+      </button>
 
-<div class="px-4 pb-3 lg:px-5">
-  <app-context-files />
-</div>
+      <button
+        type="button"
+        class="flex-1 rounded-2xl bg-surface p-3 shadow-sm ring-1 ring-black/5"
+        (click)="startChat()"
+      >
+        <div class="flex items-center flex-col gap-2">
+          <span class="flex h-9 w-9 items-center justify-center rounded-xl  ring-1 ring-black/5">
+            <img src="images/gate.png" alt="" aria-hidden="true" class="object-contain" />
+          </span>
+          <div class="text-left">
+            <div class="text-xs  text-ink-muted">Out of gate</div>
+          </div>
+        </div>
+      </button>
+
+      <button
+        type="button"
+        class="flex w-16 self-stretch items-center justify-center rounded-2xl bg-secondary-light text-secondary shadow-sm ring-1 ring-black/5"
+        aria-label="Add"
+        (click)="startChat()"
+      >
+        <app-fa-icon [icon]="icons.plus" class="text-base" />
+      </button>
+    </div>
+
+    <div class="flex flex-1 flex-col items-center justify-center gap-3 text-center">
+      <img src="images/ai-icon.png" alt="" aria-hidden="true" class=" object-contain" />
+      <h2 class="text-xl font-semibold text-black">Welcome back, Ahmed.</h2>
+      <p class="text-base text-black">How may I assist you?</p>
+    </div>
+  </div>
+} @else {
+  <div #scroller class="no-scrollbar flex-1 space-y-4 overflow-y-auto px-4 pb-4 lg:px-5">
+    @for (message of chat.messages(); track message.id) {
+      <app-chat-message [message]="message" />
+    }
+  </div>
+
+  <div class="px-4 pb-3 lg:px-5">
+    <app-context-files />
+  </div>
+}
 
 <footer class="border-t border-black/5 bg-surface/60 px-4 py-3 lg:px-5">
   <form
