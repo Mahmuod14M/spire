@@ -80,3 +80,9 @@ app-fa-icon {
   background: transparent;
 }
 
+/* Mobile navigation drawer — narrow icon rail */
+.mat-drawer.spire-menu-drawer {
+  width: 70px !important;
+  max-width: 70px;
+}
+

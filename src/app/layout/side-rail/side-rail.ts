@@ -12,9 +12,12 @@ interface RailItem {
   selector: 'app-side-rail',
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [FaIconComponent],
+  host: {
+    class: 'block max-w-[70px] shrink-0',
+  },
   template: `
     <nav
-      class="flex h-full w-16 flex-col items-center gap-2 bg-surface py-4 ring-1 ring-black/5"
+      class="flex h-full w-full max-w-[70px] flex-col items-center gap-2 bg-surface py-4 ring-1 ring-black/5"
       aria-label="Primary"
     >
       @for (item of items; track item.id) {

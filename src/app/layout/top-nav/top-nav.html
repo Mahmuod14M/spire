@@ -18,24 +18,37 @@
       class="flex h-11 w-11 items-center justify-center rounded-xl bg-surface text-ink shadow-sm ring-1 ring-black/5"
       aria-label="Search"
     >
-      <app-fa-icon [icon]="icons.search" class="text-base" />
+      <img
+        src="images/search-icon.png"
+        alt=""
+        aria-hidden="true"
+        class="h-4 w-4 object-contain"
+      />
     </button>
     <button
       type="button"
       class="flex h-11 w-11 items-center justify-center rounded-xl bg-surface text-ink shadow-sm ring-1 ring-black/5"
       aria-label="Notifications"
     >
-      <app-fa-icon [icon]="icons.bell" class="text-base" />
+      <img
+        src="images/notifi.png"
+        alt=""
+        aria-hidden="true"
+        class="h-4 w-4 object-contain"
+      />
     </button>
     <button
       type="button"
-      class="h-11 w-11 overflow-hidden rounded-full shadow-sm ring-1 ring-black/5"
-      aria-label="Account"
+      class="h-11 w-11 overflow-hidden rounded-full shadow-sm ring-1 ring-black/5 flex items-center justify-center"
+      aria-label="Open spire AI"
+      (click)="openChat()"
     >
-      <span
-        class="block h-full w-full bg-linear-to-br from-pink-400 via-purple-500 to-blue-400"
+      <img
+        src="images/ai-icon.png"
+        alt=""
         aria-hidden="true"
-      ></span>
+        class="h-full w-full object-cover"
+      />
     </button>
   </div>
 </div>

@@ -6,9 +6,9 @@
     mode="over"
     [opened]="menuOpen()"
     (openedChange)="onMenuOpenedChange($event)"
-    class="spire-chat-drawer w-72"
+    class="spire-menu-drawer w-[70px] max-w-[70px]"
   >
-    <app-side-rail class="block h-full" />
+    <app-side-rail class="block h-full w-full max-w-[70px]" />
   </mat-sidenav>
 
   <!-- AI chat drawer -->
@@ -26,7 +26,7 @@
   </mat-sidenav>
 
   <mat-sidenav-content class="flex h-dvh overflow-hidden bg-surface-muted">
-    <app-side-rail class="hidden h-full lg:block" />
+    <app-side-rail class="hidden h-full w-[70px] max-w-[70px] shrink-0 lg:block" />
 
     <div class="flex min-w-0 flex-1 flex-col">
       <app-top-nav (menuToggle)="menu.toggle()" />

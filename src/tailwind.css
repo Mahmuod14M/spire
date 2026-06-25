@@ -2,19 +2,19 @@
 
 @theme {
   /* Brand */
-  --color-primary: #4a057a;
-  --color-primary-700: #3b0066;
-  --color-primary-600: #5c1492;
+  --color-primary: #3d0867;
+  --color-primary-700: #2a0548;
+  --color-primary-600: #52098a;
 
-  --color-secondary: #ff3b56;
-  --color-secondary-soft: #ff6b81;
-  --color-secondary-light: #ffd6de;
+  --color-secondary: #ff375e;
+  --color-secondary-soft: #ff6b85;
+  --color-secondary-light: #ffd9e2;
 
-  --color-accent: #ff3b56;
+  --color-accent: #ff375e;
 
   /* Surfaces */
   --color-surface: #ffffff;
-  --color-surface-muted: #f7f7f9;
+  --color-surface-muted: #f8f8f8;
 
   /* Typography */
   --color-ink: #2d2540;
@@ -23,9 +23,9 @@
   /* Banner gradient */
   --gradient-banner: linear-gradient(
     180deg,
-    #4a057a 0%,
-    #450572 50%,
-    #3b0066 100%
+    #3d0867 0%,
+    #380662 50%,
+    #2a0548 100%
   );
 
   /* Fonts */
