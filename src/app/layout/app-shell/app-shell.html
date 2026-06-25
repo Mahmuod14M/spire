@@ -31,13 +31,16 @@
         class="flex h-full min-h-0 flex-1 flex-col overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-black/5 lg:h-dvh lg:rounded-none lg:bg-transparent lg:shadow-none lg:ring-0"
       >
         <div class="flex h-full min-h-0 flex-1 overflow-hidden lg:h-dvh">
-          <app-side-rail class="hidden h-dvh w-[70px] max-w-[70px] shrink-0 lg:block" />
-
           <div class="flex min-h-0 min-w-0 flex-1 flex-col overflow-hidden">
             <app-top-nav (menuToggle)="menu.toggle()" />
-            <main class="no-scrollbar min-w-0 flex-1 overflow-y-auto">
-              <router-outlet />
-            </main>
+
+            <div class="flex min-h-0 flex-1 overflow-hidden">
+              <app-side-rail class="hidden h-full w-[70px] max-w-[70px] shrink-0 lg:block" />
+
+              <main class="no-scrollbar min-w-0 flex-1 overflow-y-auto">
+                <router-outlet />
+              </main>
+            </div>
           </div>
 
           <app-attendance-rail class="hidden h-dvh shrink-0 lg:block" />

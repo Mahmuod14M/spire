@@ -17,7 +17,7 @@ interface RailItem {
   },
   template: `
     <nav
-      class="flex h-dvh w-full max-w-[70px] flex-col items-center gap-1.5 border-r border-black/5 bg-surface-muted/60 py-5"
+      class="flex h-full w-full max-w-[70px] bg-white rounded-3xl p-2 mx-2 flex-col items-center gap-1.5 border-r border-black/5 bg-surface-muted/60 py-5"
       aria-label="Primary"
     >
       @for (item of items; track item.id) {
@@ -26,7 +26,7 @@ interface RailItem {
           class="flex h-11 w-11 items-center justify-center rounded-xl text-lg transition"
           [class]="
             active() === item.id
-              ? 'bg-primary/10 text-primary'
+              ? 'bg-primary/10 text-[#F6EDFC]/10'
               : 'text-ink-muted hover:bg-white/80 hover:text-ink'
           "
           (click)="active.set(item.id)"
