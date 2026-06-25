@@ -13,7 +13,7 @@ import { ICONS } from '../../../../shared/icons';
     @if (msg.role === 'user') {
       <div class="flex justify-end">
         <div
-          class="max-w-[80%] rounded-2xl rounded-tr-sm bg-gradient-to-r from-secondary/10 to-primary/10 px-4 py-2.5 text-sm font-medium text-ink"
+          class="mb-2 max-w-[80%] rounded-2xl rounded-tr-sm bg-[#E9CCFF4D] px-4 py-3 text-sm font-medium text-ink"
         >
           {{ msg.text }}
         </div>

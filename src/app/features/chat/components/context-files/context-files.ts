@@ -58,5 +58,5 @@ import { ICONS } from '../../../../shared/icons';
 export class ContextFilesComponent {
   protected readonly chat = inject(ChatService);
   protected readonly icons = ICONS;
-  protected readonly expanded = signal(true);
+  protected readonly expanded = signal(false);
 }
